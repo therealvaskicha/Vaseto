@@ -1,0 +1,14 @@
+{
+  "name": "vaseto-webpage",
+  "version": "1.0.0",
+  "description": "A personal webpage for Vaseto.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "author": "Vaseto",
+  "license": "MIT"
+}
