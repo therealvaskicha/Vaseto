@@ -1,10 +1,29 @@
+:root {
+    --primary-color:#007bff;
+    --secondary-color:#333;
+    --background-color:#fff;
+    --headers-color:#000;
+}
+
+body.dark-mode {
+    --primary-color:#26b149;
+    --secondary-color:#ebebeb;
+    --background-color:#181818;
+    --headers-color:#ffffff;
+}
+
 body {
+    background-color: var(--background-color);
     margin: 0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow:hidden;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    
 }
 
 main {
@@ -16,28 +35,78 @@ h1 {
     margin-bottom: 2rem;
 }
 
-.projects {
-    margin-top: 2rem;
+h1, h2 {
+    color: var(--headers-color);
+}
+
+.dashboard {
+    box-shadow: #d5d5d5 0px 0px 10px;
+        padding: 2rem;
+    border-radius: 2rem;;
 }
 
 h2 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
 }
 
 .website-title {
-    color: #007bff;
+    color: var(--primary-color);
 }
 
 .project-link {
-    display: block;
-    color: #333;
-    text-decoration: none;
+    color: var(--secondary-color);
     padding: 0.5rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    position:relative;
+    text-decoration: none;
 }
 
 .project-link:hover {
-    color: #007bff;
-    transform: translateX(10px);
+    color: var(--primary-color);
+    transition: 0.15s ease-in-out;
+}
+
+.hover-underline:before{
+    content:"";
+    position:absolute;
+    bottom: -0.125rem;
+    left: 50%;
+    height: 0.125rem;
+    width:0;
+    background: var(--primary-color);
+    transition: 0.15s;
+}
+
+.hover-underline:hover::before{
+    width:100%;
+    left:0;
+}
+
+/* DARK MODE */
+
+.lightbulb {
+    margin: 2rem;
+}
+
+.lights-on {
+    height:4rem;
+}
+
+.lights-off {
+    display:none;
+    height:4rem;
+}
+
+.lights-on, .lights-off {
+    transition: display 0.2s ease-in-out, transform 0.1s ease-in-out;
+    opacity: 1;
+}
+
+.lights-on:hover, .lights-off:hover {
+    cursor:pointer;
+    transform: translateY(-0.075rem);
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+}
+
+.lights-on.fade, .lights-off.fade {
+    opacity: 0;
 }
