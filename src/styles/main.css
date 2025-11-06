@@ -30,9 +30,29 @@ main {
     text-align: center;
 }
 
+.top-images {
+    display:flex;
+    justify-content: center;
+}
+
+.logo {
+    display:block;
+    height:9rem;
+}
+
+.logo, .invert-logo {
+    transition: display 0.2s ease-in-out, transform 0.1s ease-in-out;
+    opacity: 1;
+}
+
+.invert-logo {
+    display: none;
+    height: 9rem;
+}
+
 h1 {
     font-size: 4rem;
-    margin-bottom: 2rem;
+    margin: 2rem;
 }
 
 h1, h2 {
@@ -41,7 +61,7 @@ h1, h2 {
 
 .dashboard {
     box-shadow: #d5d5d5 0px 0px 10px;
-        padding: 2rem;
+    padding: 2rem;
     border-radius: 2rem;;
 }
 
