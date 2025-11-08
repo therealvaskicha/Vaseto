@@ -15,24 +15,35 @@ body.dark-mode {
 body {
     background-color: var(--background-color);
     padding: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    overflow:hidden;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-
-    
+    height:100%;
+    margin:0;
 }
 
 main {
-    text-align: center;
+    min-height:100%
+}
+
+.content {
+    text-align:center;
+}
+
+.wrap {
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .top-images {
     display:flex;
     justify-content: center;
+}
+
+.welcome-message {
+    margin: 1rem;
 }
 
 .logo {
@@ -60,9 +71,14 @@ h1, h2 {
 }
 
 .dashboard {
+    display: flex;
+    flex-direction: column;
     box-shadow: #d5d5d5 0px 0px 10px;
-    padding: 2rem;
+    padding: 1rem;
+    gap:0.5rem;
     border-radius: 2rem;
+    width: 11vw;
+    justify-self: center;;
 }
 
 h2 {
@@ -102,10 +118,18 @@ h2 {
     left:0;
 }
 
+footer {
+    width:100%;
+    position:absolute;
+    bottom:1rem;
+}
+
 /* DARK MODE */
 
 .lightbulb {
-    margin: 2rem;
+    margin: 1rem;
+    display:flex;
+    justify-content: center;
 }
 
 .lights-on {
@@ -130,4 +154,15 @@ h2 {
 
 .lights-on.fade, .lights-off.fade {
     opacity: 0;
+}
+
+/* MOBILE VERSION RESPONSIVE */
+@media (max-width:768px) {
+    .dashboard {
+        width: 60vw;
+    }
+
+    .top-images {
+        top:0;
+    }
 }
