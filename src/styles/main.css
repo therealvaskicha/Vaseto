@@ -12,38 +12,40 @@ body.dark-mode {
     --headers-color:#ffffff;
 }
 
-body {
-    background-color: var(--background-color);
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+html, body {
+    box-sizing:border-box;
     height:100%;
     margin:0;
 }
 
+body {
+    min-height:100vh;
+    flex-direction:column;
+    background-color: var(--background-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    position:relative;
+}
+
 main {
-    min-height:100%
+    margin: 3rem 0;
 }
 
 .content {
+    height:100%;
     text-align:center;
 }
 
 .wrap {
-    text-align:center;
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
+    display: grid;
+    place-items: center;
 }
+
+/* LOGO AND TOP IMAGES */
 
 .top-images {
     display:flex;
     justify-content: center;
-}
-
-.welcome-message {
-    margin: 1rem;
 }
 
 .logo {
@@ -61,13 +63,33 @@ main {
     height: 9rem;
 }
 
+/* WELCOME MESSAGE AND HEADERS */
+
+.welcome-message {
+    margin: 1rem;
+}
+
 h1 {
-    font-size: 4rem;
+    font-size: 3.75rem;
     margin:1rem 0;
+}
+
+h2 {
+    font-size:1.25rem;
+    margin: 0.5rem;
 }
 
 h1, h2 {
     color: var(--headers-color);
+}
+
+/* NAVIGATION AND DASHBOARD */
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .dashboard {
@@ -77,13 +99,9 @@ h1, h2 {
     padding: 1rem;
     gap:0.5rem;
     border-radius: 2rem;
-    width: 11vw;
-    justify-self: center;;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
+    min-width:10vw;
+    max-width: 20vw;
+    justify-self: center;
 }
 
 .website-title {
@@ -92,7 +110,7 @@ h2 {
 
 .project-link {
     color: var(--secondary-color);
-    padding: 0.5rem;
+    padding: 0.25rem 0.375rem 0 0.375rem;
     position:relative;
     text-decoration: none;
 }
@@ -107,7 +125,7 @@ h2 {
     position:absolute;
     bottom: -0.125rem;
     left: 50%;
-    height: 0.125rem;
+    height: 0.05rem;
     width:0;
     background: var(--primary-color);
     transition: 0.15s;
@@ -118,10 +136,12 @@ h2 {
     left:0;
 }
 
+/* FOOTER */
+
 footer {
     width:100%;
     position:absolute;
-    bottom:1rem;
+    bottom:0;
 }
 
 /* DARK MODE */
@@ -159,10 +179,15 @@ footer {
 /* MOBILE VERSION RESPONSIVE */
 @media (max-width:768px) {
     .dashboard {
-        width: 60vw;
+        min-width:30vw;
+        max-width:50vw;
     }
 
     .top-images {
         top:0;
+    }
+
+    h1, h2 {
+        margin: 0.375rem;
     }
 }
