@@ -1,5 +1,32 @@
 const logo = document.querySelector('.logo');
 const invertLogo = document.querySelector('.invert-logo');
+const cvlink = document.getElementById('cv-link');
+const projectsLink = document.getElementById('projects-link');
+
+cvlink.addEventListener('click', () => {
+    window.open('https://drive.google.com/file/d/1Mv4ph6xivhd_bN0gRtxZF7wGBCOsAsiF/preview', '_blank');
+});
+
+projectsLink.addEventListener('click', () => {
+    const modal = document.getElementById('tba-modal');
+    modal.classList.add('show');
+});
+
+const tbaOkBtn = document.getElementById('tba-ok-btn');
+if (tbaOkBtn) {
+    tbaOkBtn.addEventListener('click', () => {
+        const modal = document.getElementById('tba-modal');
+        modal.classList.remove('show');
+    });
+}
+
+// Close modal when clicking outside the blob
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('tba-modal');
+    if (e.target === modal) {
+        modal.classList.remove('show');
+    }
+});
 
 function initDarkMode() {
     const lightsOn = document.querySelector('.lights-on');
