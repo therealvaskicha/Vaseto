@@ -4,7 +4,7 @@ const cvlink = document.getElementById('cv-link');
 const projectsLink = document.getElementById('projects-link');
 
 cvlink.addEventListener('click', () => {
-    window.open('https://drive.google.com/file/d/1Mv4ph6xivhd_bN0gRtxZF7wGBCOsAsiF/preview', '_blank');
+    window.open('https://drive.google.com/file/d/1Khef2e4Ea5iUA-CE5mlfvPMN_rrQwgDG/preview', '_blank');
 });
 
 projectsLink.addEventListener('click', () => {
